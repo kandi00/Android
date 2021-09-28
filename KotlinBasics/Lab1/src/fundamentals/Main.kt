@@ -21,6 +21,8 @@ fun main() {
     var word = "abc"
     word = messageCoding(word) {encode(it)}
     println(word)
+    //word = messageCoding(word, ::encode)
+
     word = messageCoding(word) {decode(it)}
     println(word)
     //5
@@ -96,7 +98,7 @@ fun encode(word : String): String {
     return word1
 }
 
-fun decode(word : String): (String) {
+fun decode(word : String): String {
     var word1 = ""
     for(letter in word){
         word1 = "$word1${letter-1}"
