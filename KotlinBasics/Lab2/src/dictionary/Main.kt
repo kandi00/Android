@@ -5,7 +5,10 @@ import dictionary.types.TreeSetDictionary
 import dictionary.utility.DictionaryProvider
 
 fun main(){
-    val dict: IDictionary = DictionaryProvider.createDictionary(DictionaryType.HASH_SET) //TreeSetDictionary  //ListDictionary
+
+    val dict: IDictionary = TreeSetDictionary
+    //val dict: IDictionary = ListDictionary
+    //val dict: IDictionary = DictionaryProvider.createDictionary(DictionaryType.HASH_SET)
     println("Number of words: ${dict.size()}")
     var word: String?
     while(true){
