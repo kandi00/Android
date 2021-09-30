@@ -1,4 +1,4 @@
-package dates
+package date
 
 data class Date(val year: Int, val month: Int, val day: Int) : Comparable<Date> {
     override fun compareTo(other: Date): Int {

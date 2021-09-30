@@ -11,10 +11,10 @@ fun main(){
     println("Is valid? ${date.validDate()}")
     println()
 
-    //Generatig date and placing them
+    //Generating dates and placing them
     val listOfValidDates = mutableListOf<Date>()
     var valid = 0
-    println("Invalid date: ")
+    println("Invalid dates: ")
     while(true) {
         val randomDate = Date(Random.nextInt(1000, 2030), Random.nextInt(1, 18), Random.nextInt(1, 34))
         if(randomDate.validDate()) {
@@ -26,7 +26,7 @@ fun main(){
         if(valid==10) break
     }
 
-    println("\nValid date: ")
+    println("\nValid dates: ")
     listOfValidDates.forEach{ println(it) }
 
     println("\nSorted list - natural order")
