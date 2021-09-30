@@ -1,4 +1,4 @@
-package dictionary.types
+package dictionary.type
 
 import dictionary.IDictionary
 import java.io.File

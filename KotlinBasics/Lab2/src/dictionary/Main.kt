@@ -1,7 +1,7 @@
 package dictionary
 
-import dictionary.types.ListDictionary
-import dictionary.types.TreeSetDictionary
+import dictionary.type.ListDictionary
+import dictionary.type.TreeSetDictionary
 import dictionary.utility.DictionaryProvider
 
 fun main(){

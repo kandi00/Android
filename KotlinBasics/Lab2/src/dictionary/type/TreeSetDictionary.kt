@@ -1,19 +1,19 @@
-package dictionary.types
+package dictionary.type
 
 import dictionary.IDictionary
 import java.io.File
 
-object HashSetDictionary : IDictionary {
+object TreeSetDictionary : IDictionary {
 
-    val words = hashSetOf<String>()
+    val words = mutableSetOf<String>()
 
     init{
-        File(IDictionary.fileName).readLines().forEach { HashSetDictionary.add(it) }
+        File(IDictionary.fileName).readLines().forEach { TreeSetDictionary.add(it) }
     }
 
     override fun add(word: String): Boolean {
-        if(!HashSetDictionary.find(word)){
-            HashSetDictionary.words.add(word)
+        if(!find(word)){
+            words.add(word)
             return true
         }
         return false
