@@ -1,4 +1,4 @@
-package fundamentals
+package fundamental
 
 import kotlin.random.Random
 
