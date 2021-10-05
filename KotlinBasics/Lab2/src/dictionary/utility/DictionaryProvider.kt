@@ -2,9 +2,9 @@ package dictionary.utility
 
 import dictionary.DictionaryType
 import dictionary.IDictionary
-import dictionary.types.HashSetDictionary
-import dictionary.types.ListDictionary
-import dictionary.types.TreeSetDictionary
+import dictionary.type.HashSetDictionary
+import dictionary.type.ListDictionary
+import dictionary.type.TreeSetDictionary
 
 class DictionaryProvider {
 

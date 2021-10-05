@@ -1,0 +1,40 @@
+Which of following is used to handle null exceptions in Kotlin?
+Range
+Sealed Class
+Elvis Operator
+Lambda function
+All classes in Kotlin classes are by default?
+public
+final
+sealed
+abstract
+What is correct way to create an arraylist in Kotlin?
+val map = hashMapOf(1 to "one", 2 to "two", 3 to "three")
+enum class Color {RED, GREEN, BLUE}
+val list = arrayListOf(1, 2, 3)
+val set = hashSetOf(1, 2, 3)
+What is an immutable variable?
+A variable that cannot change, read-only
+A variable that can be changed
+A variable used for string interpolation
+A simple variable
+Which of the followings constructors are available in Kotlin?
+Primary constructor
+Secondary constructor
+Both 1 & 2
+None of the above
+Which of the following extension methods are used in Kotlin?
+Read texts () & Headlines ()
+Buffer reader ()
+Read each line ()
+All of the above
+There are two types of constructors in Kotlin which are-
+Primary & Secondary constructor
+Default & No-arg constructor
+Parameterized & constant Constructor
+None of the above
+Which of the following is not the basic data types in Kotlin?
+Numbers
+Strings
+Arrays
+Lists
