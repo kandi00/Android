@@ -10,7 +10,7 @@ class QuizController {
         val lines = File("questions.txt").readLines()
         for(i in 0..lines.size-2 step 5) {
             if (i % 5 == 0){
-                questions.add( Question(lines[i], listOf(lines[i+1], lines[i+2], lines[i+3], lines[i+4])))
+                questions.add( Question(lines[i], mutableListOf(lines[i+1], lines[i+2], lines[i+3], lines[i+4])))
             }
         }
     }
@@ -28,7 +28,7 @@ class QuizController {
             item.answers.forEach { println(it) }
             val answer = readLine()!!.toInt()
 //      Shuffle the answers of each question!
-            item.answers.shuffled()
+            (item.answers as MutableList).shuffle()
 //          ii. Evaluate the response
             if(answer == 1) correctAnswers++
         }
@@ -37,7 +37,7 @@ class QuizController {
     }
 
     fun randomizeQuestions(){
-        questions.shuffled()
+        questions.shuffle()
     }
 
 }

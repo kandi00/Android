@@ -4,5 +4,4 @@ fun main(){
 
     val quizController = QuizController()
     quizController.doQuiz(2)
-
 }
