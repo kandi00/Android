@@ -2,5 +2,8 @@
     <string name="app_name">QuizApp</string>
     <string name="quiz">QUIZ</string>
     <string name="userName">Your name</string>
+    <string name="contact">CHOOSE CONTACT</string>
     <string name="getStarted">GET STARTED</string>
+
+    <string name="nameOfPlayerInputText">The name of the player is: </string>
 </resources>
