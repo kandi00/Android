@@ -7,4 +7,9 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="tealBlue">#54798C</color>
+    <color name="lightSlateGray">#6690A3</color>
+    <color name="TimberWolf">#DED7CE</color>
+    <color name="Bone">#D6CDC2</color>
+    <color name="ashGray">#CDDDDD</color>
 </resources>

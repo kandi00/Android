@@ -4,6 +4,8 @@
     <string name="userName">Your name</string>
     <string name="contact">CHOOSE CONTACT</string>
     <string name="getStarted">GET STARTED</string>
+    <string name="email">abc@email.com</string>
+    <string name="photo">CHOOSE PHOTO</string>
 
     <string name="nameOfPlayerInputText">The name of the player is: </string>
 </resources>

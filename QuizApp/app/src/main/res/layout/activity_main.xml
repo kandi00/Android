@@ -8,7 +8,6 @@
     tools:context=".MainActivity"
     android:id="@+id/mainLayout">
 
-
     <TextView
         android:id="@+id/appName"
         android:layout_width="wrap_content"
@@ -16,8 +15,9 @@
         android:layout_marginTop="@dimen/main_activity_text_view_layout_marginTop"
         android:textSize="@dimen/main_activity_text_view_text_size"
         android:text="@string/quiz"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:textColor="@color/lightSlateGray"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
@@ -25,34 +25,70 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/main_activity_edit_text_layout_marginTop"
-        android:ems="10"
+        android:ems="8"
         android:inputType="textPersonName"
         android:hint="@string/userName"
-        android:textSize="@dimen/main_activity_text_view_text_size"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:textSize="@dimen/main_activity_edit_text_text_size"
+        android:textColor="@color/lightSlateGray"
+         android:backgroundTint="@color/lightSlateGray"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/appName" />
 
-    <Button
-        android:id="@+id/chooseButton"
+    <EditText
+        android:id="@+id/editTextEmailAddress"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/main_activity_text_view_layout_marginTop"
-        android:text="@string/contact"
-        android:backgroundTint="@color/teal_700"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:ems="8"
+        android:hint="@string/email"
+        android:textSize="@dimen/main_activity_edit_text_text_size"
+        android:textColor="@color/lightSlateGray"
+        android:backgroundTint="@color/lightSlateGray"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/userName" />
 
     <Button
-        android:id="@+id/inputNameButton"
+        android:id="@+id/chooseContactButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/main_activity_text_view_layout_marginTop"
-        android:text="@string/getStarted"
-        android:backgroundTint="@color/teal_700"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="@dimen/main_activity_first_button_marginTop"
+        android:text="@string/contact"
+        android:backgroundTint="@color/TimberWolf"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/chooseButton" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/userName" />
+
+    <Button
+        android:id="@+id/chooseImageButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/photo"
+        android:backgroundTint="@color/TimberWolf"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/chooseContactButton" />
+
+    <Button
+        android:id="@+id/getStartedButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/getStarted"
+        android:textSize="@dimen/main_activity_getStartedButton_textSize"
+        android:backgroundTint="@color/TimberWolf"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/chooseImageButton" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="@dimen/main_activity_imageView_layout_width"
+        android:layout_height="@dimen/main_activity_imageView_layout_height"
+        android:layout_marginTop="@dimen/main_activity_imageView_layout_marginTop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.505"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:srcCompat="@tools:sample/avatars" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

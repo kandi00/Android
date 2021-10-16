@@ -10,19 +10,20 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
-        android:textSize="@dimen/main_activity_text_view_text_size"
+        android:layout_marginTop="@dimen/second_activity_text_view_layout_marginTop"
+        android:textSize="@dimen/second_activity_text_view_text_size"
         android:text="@string/nameOfPlayerInputText"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/userName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
-        android:textSize="@dimen/main_activity_text_view_text_size"
+        android:layout_marginTop="@dimen/second_activity_text_view_marinTop"
+        android:textSize="@dimen/second_activity_text_view_name_text_size"
+        android:textColor="@color/lightSlateGray"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView"/>
