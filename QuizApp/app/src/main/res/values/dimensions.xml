@@ -19,5 +19,17 @@
     <dimen name="second_activity_text_view_name_text_size">26sp</dimen>
     <dimen name="second_activity_text_view_marinTop">25dp</dimen>
 
+    <!--    FirstFragment-->
+    <dimen name="quiz_start_fragment_text_view_layout_marginTop">40dp</dimen>
+    <dimen name="quiz_start_fragment_text_view_text_size">32sp</dimen>
+    <dimen name="quiz_start_fragment_edit_text_layout_marginTop">30dp</dimen>
+    <dimen name="quiz_start_fragment_edit_text_text_size">20sp</dimen>
+    <dimen name="quiz_start_fragment_layout_marginTop">40dp</dimen>
+    <dimen name="quiz_start_fragment_first_button_marginTop">220dp</dimen>
+    <dimen name="quiz_start_fragment_getStartedButton_textSize">18sp</dimen>
+    <dimen name="quiz_start_fragment_imageView_layout_width">150dp</dimen>
+    <dimen name="quiz_start_fragment_imageView_layout_height">150dp</dimen>
+    <dimen name="quiz_start_fragment_imageView_layout_marginTop">220dp</dimen>
+
 
 </resources>

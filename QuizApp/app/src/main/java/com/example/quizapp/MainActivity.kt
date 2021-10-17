@@ -1,6 +1,8 @@
 package com.example.quizapp
+
+import android.Manifest
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
+import android.content.pm.PackageManager
 import android.os.Bundle
 import android.provider.ContactsContract
 import android.util.Log
@@ -10,7 +12,9 @@ import android.widget.EditText
 import android.widget.ImageView
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.core.app.ActivityCompat
 import com.google.android.material.snackbar.Snackbar
 
 class MainActivity : AppCompatActivity() {
@@ -22,9 +26,56 @@ class MainActivity : AppCompatActivity() {
     private lateinit var imageButton : Button
     private lateinit var imageView : ImageView
     private lateinit var email : EditText
+    private val READ_CONTACTS_PERMISSIONS_REQUEST = 1
+    private val CONTACT_PERMISSION_CODE = 2
+
+    private val requestPermissionLauncher =
+        registerForActivityResult(
+            ActivityResultContracts.RequestPermission()
+        ) { isGranted: Boolean ->
+            if (isGranted) {
+                Toast.makeText(this, "Read Contacts permission granted", Toast.LENGTH_SHORT).show()
+            } else {
+                Toast.makeText(this, "Read Contacts permission denied", Toast.LENGTH_SHORT).show()
+                ActivityCompat.requestPermissions(this, arrayOf(android.Manifest.permission.READ_CONTACTS), CONTACT_PERMISSION_CODE)
+            }
+        }
+
+    // Callback with the request from calling requestPermissions(...)
+    override fun onRequestPermissionsResult(
+        requestCode: Int,
+        permissions: Array<String?>,
+        grantResults: IntArray
+    ) {
+        // Make sure it's our original READ_CONTACTS request
+        if (requestCode == READ_CONTACTS_PERMISSIONS_REQUEST) {
+            if (grantResults.size == 1 &&
+                grantResults[0] == PackageManager.PERMISSION_GRANTED
+            ) {
+                Toast.makeText(this, "Read Contacts permission granted", Toast.LENGTH_SHORT).show()
+            } else {
+                Toast.makeText(this, "Read Contacts permission denied", Toast.LENGTH_SHORT).show()
+            }
+        } else {
+            super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+        }
+    }
 
     private val getContent = registerForActivityResult(
         ActivityResultContracts.PickContact()) {
+
+//        val cursor1 = contentResolver?.query(it!!, null, null, null, null )
+//        if(cursor1!!.moveToFirst()) {
+//            val contactId = cursor1.getString(cursor1.getColumnIndex(ContactsContract.Contacts._ID))
+//            val cursor2 =  contentResolver?.query(ContactsContract.CommonDataKinds.Phone.CONTENT_FILTER_URI,
+//                null, contactId, null, null )
+//            while(cursor2!!.moveToNext()){
+//                //set the phone number
+//                userName.setText(cursor2.getString(cursor2.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER)))
+//                Log.i("aaa", cursor2.getString(cursor2.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER)))
+//            }
+//        }
+
         val cursor = contentResolver.query(it!!, null, null, null, null )
         if(cursor!!.moveToFirst()){
             userName.setText(cursor.getString(cursor.getColumnIndex(ContactsContract.Contacts.DISPLAY_NAME)))
@@ -39,6 +90,8 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        requestPermissionLauncher.launch(Manifest.permission.READ_CONTACTS)
 
         contactButton = findViewById(R.id.chooseContactButton)
         imageButton = findViewById(R.id.chooseImageButton)
