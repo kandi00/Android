@@ -1,26 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <!--    MainActivity-->
-    <dimen name="main_activity_text_view_layout_marginTop">40dp</dimen>
-    <dimen name="main_activity_text_view_text_size">32sp</dimen>
-    <dimen name="main_activity_edit_text_layout_marginTop">30dp</dimen>
-    <dimen name="main_activity_edit_text_text_size">20sp</dimen>
-    <dimen name="main_activity_button_layout_marginTop">40dp</dimen>
-    <dimen name="main_activity_first_button_marginTop">220dp</dimen>
-    <dimen name="main_activity_getStartedButton_textSize">18sp</dimen>
-    <dimen name="main_activity_imageView_layout_width">150dp</dimen>
-    <dimen name="main_activity_imageView_layout_height">150dp</dimen>
-    <dimen name="main_activity_imageView_layout_marginTop">220dp</dimen>
-
     <!--    SecondActivity-->
     <dimen name="second_activity_text_view_layout_marginTop">45dp</dimen>
     <dimen name="second_activity_text_view_text_size">28sp</dimen>
     <dimen name="second_activity_text_view_name_text_size">26sp</dimen>
     <dimen name="second_activity_text_view_marinTop">25dp</dimen>
 
-    <!--    FirstFragment-->
-    <dimen name="quiz_start_fragment_text_view_layout_marginTop">40dp</dimen>
+    <!--    StartFragment-->
+    <dimen name="quiz_start_fragment_text_view_layout_marginTop">60dp</dimen>
     <dimen name="quiz_start_fragment_text_view_text_size">32sp</dimen>
     <dimen name="quiz_start_fragment_edit_text_layout_marginTop">30dp</dimen>
     <dimen name="quiz_start_fragment_edit_text_text_size">20sp</dimen>
@@ -31,5 +19,22 @@
     <dimen name="quiz_start_fragment_imageView_layout_height">150dp</dimen>
     <dimen name="quiz_start_fragment_imageView_layout_marginTop">220dp</dimen>
 
+    <!--    QuestionFragment-->
+    <dimen name="question_fragment_text_view_layout_marginTop">50dp</dimen>
+    <dimen name="question_fragment_textSize">22sp</dimen>
+    <dimen name="question_fragment_textSize_radio">18sp</dimen>
+    <dimen name="question_fragment_margin_top">70dp</dimen>
+    <dimen name="question_fragment_right_padding">50dp</dimen>
+    <dimen name="question_fragment_left_padding">50dp</dimen>
+
+    <!--    QuizEndFragment-->
+    <dimen name="quiz_end_fragment_text_view_text_size">22sp</dimen>
+    <dimen name="quiz_end_fragment_text_view_margin_top">60dp</dimen>
+    <dimen name="quiz_end_fragment_text_view_score_margin_top">30dp</dimen>
+    <dimen name="quiz_end_fragment_button_margin_top">30dp</dimen>
+    <dimen name="quiz_end_fragment_image_view_max_width">80dp</dimen>
+    <dimen name="quiz_end_fragment_image_view_max_height">80dp</dimen>
+    <dimen name="quiz_end_fragment_image_view_margin_top">100dp</dimen>
+    <dimen name="quiz_end_fragment_text_view_layout_marginTop">80dp</dimen>
 
 </resources>

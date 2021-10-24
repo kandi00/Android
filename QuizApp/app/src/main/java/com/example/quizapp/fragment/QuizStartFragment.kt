@@ -1,4 +1,4 @@
-package com.example.quizapp
+package com.example.quizapp.fragment
 
 import android.os.Bundle
 import android.provider.ContactsContract
@@ -13,14 +13,16 @@ import android.widget.EditText
 import android.widget.ImageView
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
-import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.navigation.fragment.findNavController
+import com.example.quizapp.R
+import com.example.quizapp.databinding.FragmentQuizStartBinding
 import com.google.android.material.snackbar.Snackbar
 
 class QuizStartFragment : Fragment() {
 
+    private lateinit var binding : FragmentQuizStartBinding
     private lateinit var userName  : EditText
     private lateinit var button : Button
-    private lateinit var mainLayout : ConstraintLayout
     private lateinit var contactButton : Button
     private lateinit var imageButton : Button
     private lateinit var imageView : ImageView
@@ -29,15 +31,9 @@ class QuizStartFragment : Fragment() {
     private val getContent = registerForActivityResult(
         ActivityResultContracts.PickContact()) {
         //get contact details
-        val cursor1 = context?.contentResolver?.query(it!!, null, null, null, null )
-        if(cursor1!!.moveToFirst()) {
-            val contactId = cursor1.getString(cursor1.getColumnIndex(ContactsContract.Contacts._ID))
-            val cursor2 =  context?.contentResolver?.query(ContactsContract.CommonDataKinds.Phone.CONTENT_FILTER_URI,
-                null, ContactsContract.CommonDataKinds.Phone.CONTACT_ID + " = " +  contactId, null, null )
-            while(cursor2!!.moveToNext()){
-                //set the phone number
-                Log.i("most", cursor2.getString(cursor2.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER)).toString())
-            }
+        val cursor = context?.contentResolver?.query(it!!, null, null, null, null )
+        if(cursor!!.moveToFirst()){
+            userName.setText(cursor.getString(cursor.getColumnIndex(ContactsContract.Contacts.DISPLAY_NAME)))
         }
     }
 
@@ -51,55 +47,58 @@ class QuizStartFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        val fragment: View =  inflater.inflate(R.layout.fragment_quiz_start, container, false)
-        userName  = fragment.findViewById(R.id.userName)
-        button = fragment.findViewById(R.id.getStartedButton)
-        mainLayout = fragment.findViewById(R.id.mainLayout)
+        binding = FragmentQuizStartBinding.inflate(inflater, container, false)
+        val fragment: View =  binding.root
+        initializeElements()
+        setListeners()
+        return fragment
+    }
 
+    private fun initializeElements(){
+        userName  = binding.userName
+        button = binding.getStartedButton
+        contactButton = binding.chooseContactButton
+        imageButton = binding.chooseImageButton
+        imageView = binding.imageView
+        email = binding.editTextEmailAddress
+    }
+
+    private fun setListeners(){
         button.setOnClickListener {
-            Log.i(tag, "You pressed the button and entered ${userName.text.toString()}")
-            val flag = validateEmailAddress(fragment)
+            Log.i(tag, "You pressed the button and entered ${userName.text}")
+            val flag = validateEmailAddress()
             when {
                 userName.text.isEmpty() -> Snackbar.make(
-                    mainLayout,
+                    binding.root,
                     "TRY AGAIN",
                     Snackbar.LENGTH_LONG
                 )
                     .show()
                 userName.text.contains("[0-9]".toRegex()) -> Snackbar.make(
-                    mainLayout,
+                    binding.root,
                     "CANCEL",
                     Snackbar.LENGTH_LONG
                 )
                     .show()
-                else -> { Snackbar.make(mainLayout, "OK", Snackbar.LENGTH_LONG)
+                else -> { Snackbar.make(binding.root, "OK", Snackbar.LENGTH_LONG)
                     .show()
-//                    val intent = Intent(this, SecondActivity::class.java).apply {
-//                        putExtra("MESSAGE", userName.text.toString()) }
-//                    if(flag) startActivity(intent)
+                    if(flag) this.findNavController().navigate(R.id.action_quizStartFragment_to_questionFragment2)
                 }
             }
         }
 
-        contactButton = fragment.findViewById(R.id.chooseContactButton)
-        imageButton = fragment.findViewById(R.id.chooseImageButton)
-
         //Choosing contact
-        userName  = fragment.findViewById(R.id.userName)
         contactButton.setOnClickListener{
             getContent.launch(null)
         }
 
         //Choosing photo
-        imageView = fragment.findViewById(R.id.imageView)
         imageButton.setOnClickListener{
             getImage.launch("image/*")
         }
-        return fragment
     }
 
-    private fun validateEmailAddress(fragment: View) : Boolean{
-        email = fragment.findViewById(R.id.editTextEmailAddress)
+    private fun validateEmailAddress() : Boolean{
         if(email.text.isNotEmpty() && Patterns.EMAIL_ADDRESS.matcher(email.text.toString()).matches()){
             Toast.makeText(context, "Email validated successfully!", Toast.LENGTH_SHORT).show()
             return true

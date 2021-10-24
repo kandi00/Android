@@ -1,14 +1,83 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".QuizStartFragment">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        tools:context=".fragment.QuestionFragment"
+        android:paddingRight="@dimen/question_fragment_left_padding"
+        android:paddingLeft="@dimen/question_fragment_right_padding"
+        android:id="@+id/layout">
 
-</FrameLayout>
+        <TextView
+            android:id="@+id/question"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/question_fragment_text_view_layout_marginTop"
+            android:textColor="@color/morningBlue"
+            android:textSize="@dimen/question_fragment_textSize"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <RadioGroup
+            android:id="@+id/radioGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/question_fragment_margin_top"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/question">
+
+<!--            <RadioButton-->
+<!--                android:id="@+id/answer1"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:buttonTint="@color/morningBlue"-->
+<!--                android:textSize="@dimen/question_fragment_textSize_radio"-->
+<!--                android:textColor="@color/morningBlue" />-->
+
+<!--            <RadioButton-->
+<!--                android:id="@+id/answer2"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:buttonTint="@color/morningBlue"-->
+<!--                android:textSize="@dimen/question_fragment_textSize_radio"-->
+<!--                android:textColor="@color/morningBlue" />-->
+
+<!--            <RadioButton-->
+<!--                android:id="@+id/answer3"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:buttonTint="@color/morningBlue"-->
+<!--                android:textSize="@dimen/question_fragment_textSize_radio"-->
+<!--                android:textColor="@color/morningBlue" />-->
+
+<!--            <RadioButton-->
+<!--                android:id="@+id/answer4"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:buttonTint="@color/morningBlue"-->
+<!--                android:textSize="@dimen/question_fragment_textSize_radio"-->
+<!--                android:textColor="@color/morningBlue" />-->
+
+       </RadioGroup>
+
+        <Button
+            android:id="@+id/nextSubmitButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="50dp"
+            android:backgroundTint="@color/TimberWolf"
+            android:text="@string/next"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+        <!--        app:layout_constraintTop_toBottomOf="@+id/radioGroup"-->
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
