@@ -8,12 +8,12 @@ object HashSetDictionary : IDictionary {
     val words = hashSetOf<String>()
 
     init{
-        File(IDictionary.fileName).readLines().forEach { HashSetDictionary.add(it) }
+        File(IDictionary.fileName).readLines().forEach { add(it) }
     }
 
     override fun add(word: String): Boolean {
-        if(!HashSetDictionary.find(word)){
-            HashSetDictionary.words.add(word)
+        if(!find(word)){
+            words.add(word)
             return true
         }
         return false

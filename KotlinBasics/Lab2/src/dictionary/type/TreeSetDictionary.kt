@@ -8,7 +8,7 @@ object TreeSetDictionary : IDictionary {
     val words = mutableSetOf<String>()
 
     init{
-        File(IDictionary.fileName).readLines().forEach { TreeSetDictionary.add(it) }
+        File(IDictionary.fileName).readLines().forEach { add(it) }
     }
 
     override fun add(word: String): Boolean {

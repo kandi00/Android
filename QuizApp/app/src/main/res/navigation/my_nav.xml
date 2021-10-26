@@ -32,4 +32,24 @@
             android:id="@+id/action_questionFragment2_to_quizEndFragment"
             app:destination="@id/quizEndFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.quizapp.fragment.HomeFragment"
+        android:label="HomeFragment" >
+        <action
+            android:id="@+id/action_homeFragment_to_quizStartFragment"
+            app:destination="@id/quizStartFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/questionListFragment"
+        android:name="com.example.quizapp.fragment.QuestionListFragment"
+        android:label="QuestionListFragment" />
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.quizapp.fragment.ProfileFragment"
+        android:label="ProfileFragment" />
+    <fragment
+        android:id="@+id/questionAddFragment"
+        android:name="com.example.quizapp.fragment.QuestionAddFragment"
+        android:label="QuestionAddFragment" />
 </navigation>

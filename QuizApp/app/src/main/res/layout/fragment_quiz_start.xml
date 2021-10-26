@@ -89,7 +89,7 @@
             android:id="@+id/imageView"
             android:layout_width="@dimen/quiz_start_fragment_imageView_layout_width"
             android:layout_height="@dimen/quiz_start_fragment_imageView_layout_height"
-            android:layout_marginTop="260dp"
+            android:layout_marginTop="250dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.505"
             app:layout_constraintStart_toStartOf="parent"
