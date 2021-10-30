@@ -1,0 +1,120 @@
+Which of following is used to handle null exceptions in Kotlin?
+Elvis Operator
+Range
+Sealed Class
+Lambda function
+All classes in Kotlin classes are by default?
+final
+public
+sealed
+abstract
+What is correct way to create an arraylist in Kotlin?
+val list = arrayListOf(1, 2, 3)
+val map = hashMapOf(1 to "one", 2 to "two", 3 to "three")
+enum class Color {RED, GREEN, BLUE}
+val set = hashSetOf(1, 2, 3)
+What is an immutable variable?
+A variable that cannot change, read-only
+A variable that can be changed
+A variable used for string interpolation
+A simple variable
+Which of the followings constructors are available in Kotlin?
+Both primary & secondary
+Primary constructor
+Secondary constructor
+None of the above
+Kotlin is ___ interoperable with the Java programming language.
+100%
+50%
+90%
+98%
+What does the !! operator do?
+It converts any value to a non-null type and throw an exception if the value is in fact null.
+It compares two values for identify rather than equality.
+It's the modulo operator in Kotlin.
+It does not exist in Kotlin.
+Does Kotlin have primitive data types, such as int, long, float?
+No, not at language level. But the Kotlin compiler makes use of JVM primitives for best performance.
+Yes, Kotlin is similar to Java in this respect.
+No, Kotlin does not have nor use primitive data types.
+Yes, but Kotlin internally always converts them to their non-primitive counterparts.
+What does this code do? fo()()
+Calls a function which is returned by th call of foo
+Fails compilation
+Creates a two-dimension array
+Calls foo asynchronously
+class Person(val name: String)
+It is public
+It has a private property "name"
+It is package-private
+It can be extended by other classes
+What are Kotlin coroutines?
+They provide asynchronous code without thread blocking.
+It's Kotlin's term for class methods.
+There are functions which accept other functions as arguments or return them.
+That's how the automatically generated methods hashCode() and equals() in data classes are called.
+What is to in the example: val test = 33 to 42
+An infix extension function creating a Pir(33, 42)
+A Kotlin keyword to create a Range from 33 to 42
+A syntax error
+A Kotlin keyword to create a Pair(33,42)
+___ is a way to restrict direct access to some of an object’s fields.
+Score
+LiveData
+Encapsulation
+GameViewModel
+Which of the following is not true about fragments?
+It is not possible to remove a fragment while the activity is running.
+A fragment has its own lifecycle and receives its own input events.
+A fragment is defined in a Kotlin class.
+A fragment's UI is defined in an XML layout file.
+You can create an emulator to simulate the configuration of a particular type of Android device using a tool like ___.
+AVD Manager
+Theme Editor
+Android SDK Manager
+Virtual Editor
+What parameter specifies the Android API level that Gradle should use to compile your app?
+compileSdkVersion
+minSdkVersion
+targetSdkVersion
+testSdkVersion
+What phrase means that the compiler validates types while compiling?
+Type safety
+Data binding
+Type validation
+Wrong text
+To keep the UI running smoothly, use ___ for long-running tasks, such as all database operations.
+coroutines
+ViewModels
+returns
+managed threads
+Which of the following is/are Android RecyclerView layout managers?
+GridLayoutManager and LinearLayoutManager
+RecyclingManager
+CircularLayoutManager
+LinearLayoutManager and RecyclingManager
+A ___ represents, by default, the items in a row or column when using GridLayout.
+span
+grid
+layout
+list
+Which of the following is not method in the activity lifecycle?
+onClick()
+onCreate()
+onStart()
+onPause()
+Android is based on which kernel?
+Linux kernel
+Windows kernel
+MAC kernel
+Hybrid Kernel
+What is true about OnResume()?
+Called when the activity is becoming visible to the user.
+Called when the activity will start interacting with the user.
+Called as part of the activity lifecycle when an activity is going into the background, but has not (yet) been killed.
+Called when the activity is finishing
+Which is correct for using any image with the name "trainstation"?
+Android:src="@drawable/trainstation"
+Android:"@drawable/trainstation"
+Android:src="trainstation"
+Src=@drawable/trainstation

@@ -13,8 +13,10 @@ import android.widget.EditText
 import android.widget.ImageView
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.example.quizapp.R
+import com.example.quizapp.data.SharedViewModel
 import com.example.quizapp.databinding.FragmentQuizStartBinding
 import com.google.android.material.snackbar.Snackbar
 
@@ -27,6 +29,7 @@ class QuizStartFragment : Fragment() {
     private lateinit var imageButton : Button
     private lateinit var imageView : ImageView
     private lateinit var email : EditText
+    private lateinit var viewModel : SharedViewModel
 
     private val getContent = registerForActivityResult(
         ActivityResultContracts.PickContact()) {
@@ -61,6 +64,7 @@ class QuizStartFragment : Fragment() {
         imageButton = binding.chooseImageButton
         imageView = binding.imageView
         email = binding.editTextEmailAddress
+        viewModel = ViewModelProvider(requireActivity()).get(SharedViewModel::class.java)
     }
 
     private fun setListeners(){
@@ -83,6 +87,7 @@ class QuizStartFragment : Fragment() {
                 else -> { Snackbar.make(binding.root, "OK", Snackbar.LENGTH_LONG)
                     .show()
                     if(flag) this.findNavController().navigate(R.id.action_quizStartFragment_to_questionFragment2)
+                    viewModel.setPlayerName(userName.text.toString())
                 }
             }
         }

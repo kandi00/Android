@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <!--    MainActivity-->
+    <dimen name="main_activity_FragmentContainerView_layout_margins">0dp</dimen>
+
     <!--    SecondActivity-->
     <dimen name="second_activity_text_view_layout_marginTop">45dp</dimen>
     <dimen name="second_activity_text_view_text_size">28sp</dimen>
@@ -26,6 +29,7 @@
     <dimen name="question_fragment_margin_top">70dp</dimen>
     <dimen name="question_fragment_right_padding">50dp</dimen>
     <dimen name="question_fragment_left_padding">50dp</dimen>
+    <dimen name="question_fragment_button_margin_top">50dp</dimen>
 
     <!--    QuizEndFragment-->
     <dimen name="quiz_end_fragment_text_view_text_size">22sp</dimen>
@@ -37,4 +41,23 @@
     <dimen name="quiz_end_fragment_image_view_margin_top">100dp</dimen>
     <dimen name="quiz_end_fragment_text_view_layout_marginTop">80dp</dimen>
 
+    <!--    question item for RecyclerView-->
+    <dimen name="question_item_text_view_padding">10dp</dimen>
+    <dimen name="question_item_text_view_padding_left">5dp</dimen>
+
+    <!--    Profile fragment-->
+    <dimen name="profile_fragment_tv_playerName_layout_marginTop">200dp</dimen>
+    <dimen name="profile_fragment_tv_playerName_layout_text_size">25sp</dimen>
+    <dimen name="profile_fragment_tv_playerNameText_layout_marginTop">250dp</dimen>
+    <dimen name="profile_fragment_tv_playerNameText_layout_text_size">22sp</dimen>
+    <dimen name="profile_fragment_tv_highScore_layout_marginTop">300dp</dimen>
+    <dimen name="profile_fragment_tv_highScore_layout_text_size">25sp</dimen>
+    <dimen name="profile_fragment_tv_highScoreText_layout_marginTop">350dp</dimen>
+    <dimen name="profile_fragment_tv_highScoreText_layout_text_size">22sp</dimen>
+
+    <!--    QuestionAddFragment-->
+    <dimen name="question_fragment_tv_margin_top">100dp</dimen>
+    <dimen name="question_fragment_edit_tv_margin_top">20dp</dimen>
+    <dimen name="question_fragment_tv_textSize">22sp</dimen>
+    <dimen name="question_fragment_edit_tv_textSize">18sp</dimen>
 </resources>

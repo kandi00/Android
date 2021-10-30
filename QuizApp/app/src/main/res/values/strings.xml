@@ -10,5 +10,15 @@
     <string name="quizResult"> Quiz result </string>
     <string name="next"> NEXT </string>
     <string name="tryAgain"> TRY AGAIN </string>
+    <string name="home"> Home </string>
+    <string name="quizTime"> Quiz time </string>
+    <string name="profile"> Profile </string>
+    <string name="listOfQuestions"> List of questions </string>
+    <string name="newQuestion"> New question </string>
+    <string name="playerName"> Player name: </string>
+    <string name="question">Question...?</string>
+    <string name="correct_answer">correct answer</string>
+    <string name="incorrect_answer">incorrect answer</string>
+    <string name="add_your_custom_question">Add your custom question with answers here:</string>
 
 </resources>

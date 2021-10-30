@@ -18,42 +18,46 @@
             android:id="@+id/playerName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="80dp"
-            android:layout_marginTop="370dp"
-            android:textColor="@color/morningBlue"
-            android:text="Player name:"
+            android:layout_marginTop="@dimen/profile_fragment_tv_playerName_layout_marginTop"
+            android:textSize="@dimen/profile_fragment_tv_playerName_layout_text_size"
+            android:textColor="@color/lightSlateGray"
+            android:text="@string/playerName"
             app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/playerNameText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="370dp"
-            android:layout_marginEnd="80dp"
-            android:textColor="@color/morningBlue"
+            android:layout_marginTop="@dimen/profile_fragment_tv_playerNameText_layout_marginTop"
+            android:textSize="@dimen/profile_fragment_tv_playerNameText_layout_text_size"
+            android:textColor="@color/cadet"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/highScore"
+            android:id="@+id/highestScore"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="80dp"
-            android:layout_marginBottom="300dp"
-            android:textColor="@color/morningBlue"
-            android:text="High score:"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            android:layout_marginTop="@dimen/profile_fragment_tv_highScore_layout_marginTop"
+            android:text="Highest score:"
+            android:textSize="@dimen/profile_fragment_tv_highScore_layout_text_size"
+            android:textColor="@color/lightSlateGray"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/highScoreText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="80dp"
-            android:layout_marginBottom="300dp"
-            android:textColor="@color/morningBlue"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
+            android:layout_marginTop="@dimen/profile_fragment_tv_highScoreText_layout_marginTop"
+            android:textColor="@color/cadet"
+            android:textSize="@dimen/profile_fragment_tv_highScore_layout_text_size"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

@@ -18,50 +18,87 @@
             android:id="@+id/add_question"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="300dp"
-            android:textColor="@color/morningBlue"
-            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="@dimen/question_fragment_tv_margin_top"
+            android:textSize="@dimen/question_fragment_tv_textSize"
+            android:text="@string/add_your_custom_question"
+            android:textColor="@color/TimberWolf"
             app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/add_answer1"
+        <EditText
+            android:id="@+id/added_question"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="80dp"
+            android:layout_marginTop="@dimen/question_fragment_edit_tv_margin_top"
+            android:ems="10"
+            android:inputType="text"
+            android:hint="@string/question"
+            android:textSize="@dimen/question_fragment_edit_tv_textSize"
             android:textColor="@color/morningBlue"
-            app:layout_constraintEnd_toEndOf="parent"
+            android:backgroundTint="@color/morningBlue"
             app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/add_question" />
 
-        <TextView
-            android:id="@+id/add_answer2"
+        <EditText
+            android:id="@+id/added_answer1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="@dimen/question_fragment_edit_tv_margin_top"
+            android:ems="10"
+            android:inputType="text"
+            android:hint="@string/correct_answer"
+            android:textSize="@dimen/question_fragment_edit_tv_textSize"
             android:textColor="@color/morningBlue"
-            app:layout_constraintEnd_toEndOf="parent"
+            android:backgroundTint="@color/morningBlue"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/add_answer1" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/added_question" />
 
-        <TextView
-            android:id="@+id/add_answer3"
+        <EditText
+            android:id="@+id/added_answer2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="@dimen/question_fragment_edit_tv_margin_top"
+            android:ems="10"
+            android:inputType="text"
+            android:hint="@string/incorrect_answer"
+            android:textSize="@dimen/question_fragment_edit_tv_textSize"
             android:textColor="@color/morningBlue"
-            app:layout_constraintEnd_toEndOf="parent"
+            android:backgroundTint="@color/morningBlue"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/add_answer2" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/added_answer1" />
 
-        <TextView
-            android:id="@+id/add_answer4"
+        <EditText
+            android:id="@+id/added_answer3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="@dimen/question_fragment_edit_tv_margin_top"
+            android:ems="10"
+            android:inputType="text"
+            android:hint="@string/incorrect_answer"
+            android:textSize="@dimen/question_fragment_edit_tv_textSize"
             android:textColor="@color/morningBlue"
-            app:layout_constraintEnd_toEndOf="parent"
+            android:backgroundTint="@color/morningBlue"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/add_answer3" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/added_answer2" />
+
+        <EditText
+            android:id="@+id/added_answer4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/question_fragment_edit_tv_margin_top"
+            android:ems="10"
+            android:inputType="text"
+            android:hint="@string/incorrect_answer"
+            android:textSize="@dimen/question_fragment_edit_tv_textSize"
+            android:textColor="@color/morningBlue"
+            android:backgroundTint="@color/morningBlue"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/added_answer3" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

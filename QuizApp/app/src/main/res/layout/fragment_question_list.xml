@@ -13,5 +13,15 @@
         tools:context=".fragment.QuestionFragment"
         android:paddingEnd="@dimen/question_fragment_left_padding"
         android:paddingStart="@dimen/question_fragment_right_padding">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layoutManager="LinearLayoutManager"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+
 </layout>

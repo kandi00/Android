@@ -34,37 +34,37 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/question">
 
-<!--            <RadioButton-->
-<!--                android:id="@+id/answer1"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:buttonTint="@color/morningBlue"-->
-<!--                android:textSize="@dimen/question_fragment_textSize_radio"-->
-<!--                android:textColor="@color/morningBlue" />-->
+            <RadioButton
+                android:id="@+id/answer1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:buttonTint="@color/morningBlue"
+                android:textSize="@dimen/question_fragment_textSize_radio"
+                android:textColor="@color/morningBlue" />
 
-<!--            <RadioButton-->
-<!--                android:id="@+id/answer2"-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:buttonTint="@color/morningBlue"-->
-<!--                android:textSize="@dimen/question_fragment_textSize_radio"-->
-<!--                android:textColor="@color/morningBlue" />-->
+            <RadioButton
+                android:id="@+id/answer2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:buttonTint="@color/morningBlue"
+                android:textSize="@dimen/question_fragment_textSize_radio"
+                android:textColor="@color/morningBlue" />
 
-<!--            <RadioButton-->
-<!--                android:id="@+id/answer3"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:buttonTint="@color/morningBlue"-->
-<!--                android:textSize="@dimen/question_fragment_textSize_radio"-->
-<!--                android:textColor="@color/morningBlue" />-->
+            <RadioButton
+                android:id="@+id/answer3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:buttonTint="@color/morningBlue"
+                android:textSize="@dimen/question_fragment_textSize_radio"
+                android:textColor="@color/morningBlue" />
 
-<!--            <RadioButton-->
-<!--                android:id="@+id/answer4"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:buttonTint="@color/morningBlue"-->
-<!--                android:textSize="@dimen/question_fragment_textSize_radio"-->
-<!--                android:textColor="@color/morningBlue" />-->
+            <RadioButton
+                android:id="@+id/answer4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:buttonTint="@color/morningBlue"
+                android:textSize="@dimen/question_fragment_textSize_radio"
+                android:textColor="@color/morningBlue" />
 
        </RadioGroup>
 
@@ -72,12 +72,12 @@
             android:id="@+id/nextSubmitButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="50dp"
+            android:layout_marginBottom="@dimen/question_fragment_button_margin_top"
             android:backgroundTint="@color/TimberWolf"
             android:text="@string/next"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
-        <!--        app:layout_constraintTop_toBottomOf="@+id/radioGroup"-->
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/radioGroup"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

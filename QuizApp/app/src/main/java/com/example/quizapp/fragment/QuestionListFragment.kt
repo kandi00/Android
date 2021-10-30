@@ -5,11 +5,17 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.RecyclerView
+import com.example.quizapp.adapter.RecyclerViewAdapter
+import com.example.quizapp.data.SharedViewModel
 import com.example.quizapp.databinding.FragmentQuestionListBinding
 
 class QuestionListFragment : Fragment() {
 
     private lateinit var binding : FragmentQuestionListBinding
+    private lateinit var recyclerView: RecyclerView
+    private lateinit var viewModel : SharedViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -18,13 +24,16 @@ class QuestionListFragment : Fragment() {
         // Inflate the layout for this fragment
         binding = FragmentQuestionListBinding.inflate(inflater, container, false)
         val fragment: View =  binding.root
-
         initializeElements()
         setListeners()
         return fragment
     }
 
     private fun initializeElements(){
+        viewModel = ViewModelProvider(requireActivity()).get(SharedViewModel::class.java)
+        recyclerView = binding.recyclerView
+        recyclerView.adapter = RecyclerViewAdapter(viewModel.getQuestions())
+        recyclerView.setHasFixedSize(true)
     }
 
     private fun setListeners(){
