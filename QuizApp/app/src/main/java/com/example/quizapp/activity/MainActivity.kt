@@ -7,10 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.navigateUp
-import androidx.navigation.ui.setupActionBarWithNavController
-import androidx.navigation.ui.setupWithNavController
+import androidx.navigation.ui.*
 import com.example.quizapp.R
 import com.example.quizapp.data.SharedViewModel
 import com.example.quizapp.databinding.ActivityMainBinding
@@ -30,6 +27,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
         viewModel = SharedViewModel(application)
 
+        //Drawer navigation
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.fragmentContainerView2) as NavHostFragment
         navController = navHostFragment.navController
         drawerLayout = binding.maDrawerLayout

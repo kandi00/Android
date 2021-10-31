@@ -44,6 +44,7 @@ class QuestionFragment : Fragment() {
         //prepare and shuffle questions
         viewModel = ViewModelProvider(requireActivity()).get(SharedViewModel::class.java)
         viewModel.getQuestions().shuffle()
+        viewModel.getFourRandomQuestion()
         //show first question
         showQuestion(viewModel.getCurrentQuestion())
 
@@ -92,6 +93,7 @@ class QuestionFragment : Fragment() {
             if (viewModel.isLastQuestion()) {
                 //evaluate the question which is visible now
                 evaluateCurrentQuestion()
+                viewModel.setHighestScore()
                 //navigate to next fragment
                 findNavController().navigate(R.id.action_questionFragment2_to_quizEndFragment)
             } else {

@@ -8,14 +8,29 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.quizapp.R
 import com.example.quizapp.model.Question
 
-class RecyclerViewAdapter(private val list : List<Question>) : RecyclerView.Adapter<RecyclerViewAdapter.QuizHolder>() {
+class RecyclerViewAdapter(private val list : List<Question>, private val listener: OnItemClickListener) : RecyclerView.Adapter<RecyclerViewAdapter.QuizHolder>() {
 
-    inner class QuizHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    interface OnItemClickListener{
+        fun onItemClick(position: Int)
+    }
+
+    inner class QuizHolder(itemView: View) : RecyclerView.ViewHolder(itemView), View.OnClickListener {
         private val questionTextView: TextView = itemView.findViewById(R.id.text_view_question)
         private val answerText1 : TextView = itemView.findViewById(R.id.text_view_answer1)
         private val answerText2 : TextView = itemView.findViewById(R.id.text_view_answer2)
         private val answerText3 : TextView = itemView.findViewById(R.id.text_view_answer3)
         private val answerText4 : TextView = itemView.findViewById(R.id.text_view_answer4)
+
+        init{
+            itemView.setOnClickListener(this)
+        }
+
+        override fun onClick(v: View?) {
+            val currentPosition = this.adapterPosition
+            listener.onItemClick(currentPosition)
+
+        }
+
         fun bindQuestion(question: Question) {
             questionTextView.text = question.text
             answerText1.text = question.answers[0].first

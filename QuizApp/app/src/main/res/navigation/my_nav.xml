@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/my_nav"
-    app:startDestination="@id/quizStartFragment">
+    app:startDestination="@id/homeFragment">
 
     <fragment
         android:id="@+id/quizEndFragment"
@@ -49,7 +49,11 @@
     <fragment
         android:id="@+id/questionListFragment"
         android:name="com.example.quizapp.fragment.QuestionListFragment"
-        android:label="QuestionListFragment" />
+        android:label="QuestionListFragment" >
+        <action
+            android:id="@+id/action_questionListFragment_to_questionDetailFragment"
+            app:destination="@id/questionDetailFragment" />
+    </fragment>
     <fragment
         android:id="@+id/profileFragment"
         android:name="com.example.quizapp.fragment.ProfileFragment"
@@ -58,4 +62,8 @@
         android:id="@+id/questionAddFragment"
         android:name="com.example.quizapp.fragment.QuestionAddFragment"
         android:label="QuestionAddFragment" />
+    <fragment
+        android:id="@+id/questionDetailFragment"
+        android:name="com.example.quizapp.fragment.QuestionDetailFragment"
+        android:label="QuestionDetailFragment" />
 </navigation>

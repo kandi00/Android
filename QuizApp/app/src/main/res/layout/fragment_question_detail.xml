@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingStart="@dimen/question_fragment_right_padding"
+        android:paddingEnd="@dimen/question_fragment_left_padding"
+        tools:context=".fragment.QuestionFragment">
+
+        <TextView
+        android:id="@+id/detail_question"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:paddingBottom="@dimen/question_item_text_view_padding"
+        android:paddingTop="@dimen/question_item_text_view_padding"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/detail_answer1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/question_item_text_view_padding_left"
+            android:textColor="@color/TimberWolf"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/detail_question" />
+
+        <TextView
+            android:id="@+id/detail_answer2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/TimberWolf"
+            android:paddingLeft="@dimen/question_item_text_view_padding_left"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/detail_answer1" />
+
+        <TextView
+            android:id="@+id/detail_answer3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/TimberWolf"
+            android:paddingLeft="@dimen/question_item_text_view_padding_left"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/detail_answer2" />
+
+        <TextView
+            android:id="@+id/detail_answer4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/question_item_text_view_padding_left"
+            android:textColor="@color/TimberWolf"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/detail_answer3" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

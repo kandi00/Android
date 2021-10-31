@@ -14,7 +14,7 @@ class SharedViewModel(application : Application) : AndroidViewModel(application)
     private val questions = mutableListOf<Question>()
     private var currentQuestion = 0
     private var correctAnswers = 0
-    private var playerName : String? = null
+    private var playerName : String = ""
     private var highestScore : Int = 0
     @SuppressLint("StaticFieldLeak")
     private val context = application.applicationContext
@@ -30,13 +30,11 @@ class SharedViewModel(application : Application) : AndroidViewModel(application)
     fun getNrOfCorrectAnswers(): Int {
         return correctAnswers
     }
-
-    fun getNrOfQuestions(): Int {
-        return questions.size
-    }
-
     fun getQuestions(): MutableList<Question> {
         return questions
+    }
+    fun getFourRandomQuestion(): MutableList<Question> {
+        return questions.subList(0, 4)
     }
 
     fun getCurrentQuestion(): Question {
@@ -48,7 +46,7 @@ class SharedViewModel(application : Application) : AndroidViewModel(application)
     }
 
     fun isLastQuestion(): Boolean {
-        return currentQuestion == questions.size-1
+        return currentQuestion == 3
     }
 
     fun setNrOfCurrentQuestionAndCorrectAnswers(){
@@ -84,5 +82,11 @@ class SharedViewModel(application : Application) : AndroidViewModel(application)
 
     fun getHighestScore() : Int {
         return highestScore
+    }
+    fun addNewQuestion(text : String, ans1 : String, ans2 : String, ans3 : String, ans4 : String){
+        questions.add(Question(text, listOf(Pair(ans1, true), Pair(ans2, false), Pair(ans3, false), Pair(ans4, false))))
+    }
+    fun setCurrentQuestionPosition(poz : Int){
+        currentQuestion = poz
     }
 }

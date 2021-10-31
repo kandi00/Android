@@ -20,5 +20,6 @@
     <string name="correct_answer">correct answer</string>
     <string name="incorrect_answer">incorrect answer</string>
     <string name="add_your_custom_question">Add your custom question with answers here:</string>
+    <string name="add_question">ADD QUESTION</string>
 
 </resources>

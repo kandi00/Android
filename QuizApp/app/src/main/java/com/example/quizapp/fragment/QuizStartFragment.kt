@@ -65,6 +65,7 @@ class QuizStartFragment : Fragment() {
         imageView = binding.imageView
         email = binding.editTextEmailAddress
         viewModel = ViewModelProvider(requireActivity()).get(SharedViewModel::class.java)
+        userName.setText(viewModel.getPlayerName().toString())
     }
 
     private fun setListeners(){

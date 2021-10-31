@@ -31,11 +31,9 @@ class QuizEndFragment : Fragment() {
         val fragment: View =  binding.root
 
         initializeElements()
-        viewModel = ViewModelProvider(requireActivity()).get(SharedViewModel::class.java)
-        resultPoints.text = "${viewModel.getNrOfCorrectAnswers()} / ${viewModel.getNrOfQuestions()}"
-        viewModel.setNrOfCurrentQuestionAndCorrectAnswers()
-        viewModel.setHighestScore()
         setlisteners()
+        resultPoints.text = "${viewModel.getNrOfCorrectAnswers()} / 4"
+        viewModel.setNrOfCurrentQuestionAndCorrectAnswers()
 
         return fragment
     }
@@ -43,6 +41,7 @@ class QuizEndFragment : Fragment() {
     private fun initializeElements(){
         resultPoints = binding.tvQuizResultPoints
         tryAgainButton = binding.TryAgainButton
+        viewModel = ViewModelProvider(requireActivity()).get(SharedViewModel::class.java)
     }
 
     private fun setlisteners(){
