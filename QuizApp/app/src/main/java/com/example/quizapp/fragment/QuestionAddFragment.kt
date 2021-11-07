@@ -49,7 +49,7 @@ class QuestionAddFragment : Fragment() {
     private fun setListeners(){
         button.setOnClickListener {
             viewModel.addNewQuestion(addedQuestion.text.toString(), addedAnswer1.text.toString(), addedAnswer2.text.toString(), addedAnswer3.text.toString(), addedAnswer4.text.toString())
+            Toast.makeText(activity, "Question added!", Toast.LENGTH_SHORT).show()
         }
-        Toast.makeText(activity?.applicationContext, "Question added!", Toast.LENGTH_SHORT).show()
     }
 }

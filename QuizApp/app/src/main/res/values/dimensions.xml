@@ -13,10 +13,10 @@
     <!--    StartFragment-->
     <dimen name="quiz_start_fragment_text_view_layout_marginTop">60dp</dimen>
     <dimen name="quiz_start_fragment_text_view_text_size">32sp</dimen>
-    <dimen name="quiz_start_fragment_edit_text_layout_marginTop">30dp</dimen>
+    <dimen name="quiz_start_fragment_edit_text_layout_marginTop">50dp</dimen>
     <dimen name="quiz_start_fragment_edit_text_text_size">20sp</dimen>
     <dimen name="quiz_start_fragment_layout_marginTop">40dp</dimen>
-    <dimen name="quiz_start_fragment_first_button_marginTop">220dp</dimen>
+    <dimen name="quiz_start_fragment_first_button_marginTop">100dp</dimen>
     <dimen name="quiz_start_fragment_getStartedButton_textSize">18sp</dimen>
     <dimen name="quiz_start_fragment_imageView_layout_width">150dp</dimen>
     <dimen name="quiz_start_fragment_imageView_layout_height">150dp</dimen>
@@ -56,7 +56,7 @@
     <dimen name="profile_fragment_tv_highScoreText_layout_text_size">22sp</dimen>
 
     <!--    QuestionAddFragment-->
-    <dimen name="question_fragment_tv_margin_top">100dp</dimen>
+    <dimen name="question_fragment_tv_margin_top">60dp</dimen>
     <dimen name="question_fragment_edit_tv_margin_top">20dp</dimen>
     <dimen name="question_fragment_tv_textSize">22sp</dimen>
     <dimen name="question_fragment_edit_tv_textSize">18sp</dimen>

@@ -3,6 +3,7 @@ package com.example.quizapp.adapter
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.quizapp.R
@@ -11,32 +12,35 @@ import com.example.quizapp.model.Question
 class RecyclerViewAdapter(private val list : List<Question>, private val listener: OnItemClickListener) : RecyclerView.Adapter<RecyclerViewAdapter.QuizHolder>() {
 
     interface OnItemClickListener{
-        fun onItemClick(position: Int)
+        //fun onItemClick(position: Int)
+        fun onDetailsButtonClick(position: Int)
+        fun onDeleteButtonClick(position: Int)
     }
 
     inner class QuizHolder(itemView: View) : RecyclerView.ViewHolder(itemView), View.OnClickListener {
         private val questionTextView: TextView = itemView.findViewById(R.id.text_view_question)
-        private val answerText1 : TextView = itemView.findViewById(R.id.text_view_answer1)
-        private val answerText2 : TextView = itemView.findViewById(R.id.text_view_answer2)
-        private val answerText3 : TextView = itemView.findViewById(R.id.text_view_answer3)
-        private val answerText4 : TextView = itemView.findViewById(R.id.text_view_answer4)
+        private val correctAnswer : TextView = itemView.findViewById(R.id.text_view_correct_answer)
+        private val detailsButton : Button = itemView.findViewById(R.id.detailsButton)
+        private val deleteButton : Button = itemView.findViewById(R.id.deleteButton)
 
         init{
-            itemView.setOnClickListener(this)
+            //itemView.setOnClickListener(this)
+            detailsButton.setOnClickListener(this)
+            deleteButton.setOnClickListener(this)
         }
 
         override fun onClick(v: View?) {
             val currentPosition = this.adapterPosition
-            listener.onItemClick(currentPosition)
-
+            when(v?.id){
+                detailsButton.id -> listener.onDetailsButtonClick(currentPosition)
+                deleteButton.id -> listener.onDeleteButtonClick(currentPosition)
+                //else -> listener.onItemClick(currentPosition) set listener to the whole recyclerview item
+            }
         }
 
         fun bindQuestion(question: Question) {
             questionTextView.text = question.text
-            answerText1.text = question.answers[0].first
-            answerText2.text = question.answers[1].first
-            answerText3.text = question.answers[2].first
-            answerText4.text = question.answers[3].first
+            correctAnswer.text = question.answers[0].first
         }
     }
 
@@ -55,4 +59,3 @@ class RecyclerViewAdapter(private val list : List<Question>, private val listene
         return list.size
     }
 }
-

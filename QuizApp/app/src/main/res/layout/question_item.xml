@@ -1,53 +1,78 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent">
+
+    <com.google.android.material.card.MaterialCardView
+    android:id="@+id/card_view"
+    card_view:strokeColor="@color/ashGray"
+    card_view:strokeWidth="1dp"
+    android:layout_gravity="center"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:backgroundTint="@color/ashGray"
-    android:padding="10dp">
+    card_view:cardCornerRadius="2dp"
+    android:layout_margin="12dp">
 
-    <TextView
-        android:id="@+id/text_view_question"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:paddingBottom="@dimen/question_item_text_view_padding"
-        android:paddingTop="@dimen/question_item_text_view_padding"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="20dp">
 
-    <TextView
-        android:id="@+id/text_view_answer1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:paddingLeft="@dimen/question_item_text_view_padding_left"
-        android:textColor="@color/TimberWolf"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/text_view_question" />
+            <TextView
+                android:id="@+id/text_view_question"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="@dimen/question_item_text_view_padding"
+                android:textSize="16sp"
+                card_view:layout_constraintStart_toStartOf="parent"
+                card_view:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/text_view_answer2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="@color/TimberWolf"
-        android:paddingLeft="@dimen/question_item_text_view_padding_left"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/text_view_answer1" />
+            <TextView
+                android:id="@+id/text_view_single_answer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/question_item_text_view_padding_left"
+                android:text="Single answer"
+                android:textColor="@color/TimberWolf"
+                card_view:layout_constraintStart_toStartOf="parent"
+                card_view:layout_constraintTop_toBottomOf="@id/text_view_question" />
 
-    <TextView
-        android:id="@+id/text_view_answer3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="@color/TimberWolf"
-        android:paddingLeft="@dimen/question_item_text_view_padding_left"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/text_view_answer2" />
+            <TextView
+                android:id="@+id/text_view_correct_answer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:paddingLeft="@dimen/question_item_text_view_padding_left"
+                android:textColor="@color/TimberWolf"
+                card_view:layout_constraintStart_toStartOf="parent"
+                card_view:layout_constraintTop_toBottomOf="@id/text_view_single_answer" />
 
-    <TextView
-        android:id="@+id/text_view_answer4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:paddingLeft="@dimen/question_item_text_view_padding_left"
-        android:textColor="@color/TimberWolf"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/text_view_answer3" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+            <Button
+                android:id="@+id/detailsButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Details"
+                android:backgroundTint="@color/white"
+                android:textColor="@color/lightSlateGray"
+                card_view:layout_constraintStart_toStartOf="parent"
+                card_view:layout_constraintTop_toBottomOf="@+id/text_view_correct_answer" />
+
+            <Button
+                android:id="@+id/deleteButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Delete"
+                android:backgroundTint="@color/white"
+                android:textColor="@color/lightSlateGray"
+                card_view:layout_constraintEnd_toEndOf="parent"
+                card_view:layout_constraintStart_toEndOf="@+id/deleteButton"
+                card_view:layout_constraintTop_toBottomOf="@+id/text_view_correct_answer" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+</LinearLayout>

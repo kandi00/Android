@@ -41,9 +41,19 @@ class QuestionListFragment : Fragment(), RecyclerViewAdapter.OnItemClickListener
     private fun setListeners(){
     }
 
-    override fun onItemClick(position: Int) {
+//    override fun onItemClick(position: Int) {
+//        viewModel.setCurrentQuestionPosition(position)
+//        findNavController().navigate(R.id.action_questionListFragment_to_questionDetailFragment)
+//    }
+
+    override fun onDetailsButtonClick(position: Int) {
         viewModel.setCurrentQuestionPosition(position)
         findNavController().navigate(R.id.action_questionListFragment_to_questionDetailFragment)
+    }
+
+    override fun onDeleteButtonClick(position: Int) {
+        viewModel.deleteQuestion(position)
+        (recyclerView.adapter as RecyclerViewAdapter).notifyDataSetChanged()
     }
 
 }

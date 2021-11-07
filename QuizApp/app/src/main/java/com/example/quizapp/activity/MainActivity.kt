@@ -30,6 +30,7 @@ class MainActivity : AppCompatActivity() {
         //Drawer navigation
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.fragmentContainerView2) as NavHostFragment
         navController = navHostFragment.navController
+        //navController = findNavController(R.id.fragmentContainerView2)
         drawerLayout = binding.maDrawerLayout
         binding.navigationView.setupWithNavController(navController)
         appBarConfiguration = AppBarConfiguration(navController.graph, drawerLayout)

@@ -1,6 +1,7 @@
 package com.example.quizapp.fragment
 
 import android.annotation.SuppressLint
+import android.content.Context
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -8,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
+import androidx.activity.OnBackPressedCallback
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.example.quizapp.R
@@ -31,7 +33,7 @@ class QuizEndFragment : Fragment() {
         val fragment: View =  binding.root
 
         initializeElements()
-        setlisteners()
+        setListeners()
         resultPoints.text = "${viewModel.getNrOfCorrectAnswers()} / 4"
         viewModel.setNrOfCurrentQuestionAndCorrectAnswers()
 
@@ -44,9 +46,20 @@ class QuizEndFragment : Fragment() {
         viewModel = ViewModelProvider(requireActivity()).get(SharedViewModel::class.java)
     }
 
-    private fun setlisteners(){
+    private fun setListeners(){
         tryAgainButton.setOnClickListener {
             this.findNavController().navigate(R.id.action_quizEndFragment_to_quizStartFragment)
         }
+    }
+
+    override fun onAttach(context : Context){
+        super.onAttach(context)
+        //callback
+        val callback = object : OnBackPressedCallback(true){
+            override fun handleOnBackPressed() {
+                findNavController().navigate(R.id.action_quizEndFragment_to_quizStartFragment)
+            }
+        }
+        requireActivity().onBackPressedDispatcher.addCallback(this, callback)
     }
 }

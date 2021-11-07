@@ -14,13 +14,22 @@
         android:paddingEnd="@dimen/question_fragment_left_padding"
         tools:context=".fragment.QuestionFragment">
 
+        <ImageView
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:src="@drawable/question_details"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
         <TextView
         android:id="@+id/detail_question"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="250dp"
         android:paddingBottom="@dimen/question_item_text_view_padding"
         android:paddingTop="@dimen/question_item_text_view_padding"
+        android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -28,8 +37,9 @@
             android:id="@+id/detail_answer1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingLeft="@dimen/question_item_text_view_padding_left"
-            android:textColor="@color/TimberWolf"
+            android:padding="@dimen/question_item_text_view_padding_left"
+            android:textColor="@color/morningBlue"
+            android:textSize="16sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/detail_question" />
 
@@ -38,7 +48,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/TimberWolf"
-            android:paddingLeft="@dimen/question_item_text_view_padding_left"
+            android:textSize="16sp"
+            android:padding="@dimen/question_item_text_view_padding_left"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/detail_answer1" />
 
@@ -47,7 +58,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/TimberWolf"
-            android:paddingLeft="@dimen/question_item_text_view_padding_left"
+            android:textSize="16sp"
+            android:padding="@dimen/question_item_text_view_padding_left"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/detail_answer2" />
 
@@ -55,7 +67,8 @@
             android:id="@+id/detail_answer4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingLeft="@dimen/question_item_text_view_padding_left"
+            android:textSize="16sp"
+            android:padding="@dimen/question_item_text_view_padding_left"
             android:textColor="@color/TimberWolf"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/detail_answer3" />

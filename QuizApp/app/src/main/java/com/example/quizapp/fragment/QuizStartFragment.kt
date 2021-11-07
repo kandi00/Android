@@ -1,5 +1,6 @@
 package com.example.quizapp.fragment
 
+import android.content.Context
 import android.os.Bundle
 import android.provider.ContactsContract
 import android.util.Log
@@ -12,6 +13,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
 import android.widget.Toast
+import androidx.activity.OnBackPressedCallback
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
@@ -62,7 +64,7 @@ class QuizStartFragment : Fragment() {
         button = binding.getStartedButton
         contactButton = binding.chooseContactButton
         imageButton = binding.chooseImageButton
-        imageView = binding.imageView
+        imageView = binding.quizTime
         email = binding.editTextEmailAddress
         viewModel = ViewModelProvider(requireActivity()).get(SharedViewModel::class.java)
         userName.setText(viewModel.getPlayerName().toString())
@@ -111,5 +113,16 @@ class QuizStartFragment : Fragment() {
         }
         Toast.makeText(context, "Invalid email!", Toast.LENGTH_SHORT).show()
         return false
+    }
+
+    override fun onAttach(context : Context){
+        super.onAttach(context)
+        //callback
+        val callback = object : OnBackPressedCallback(true){
+            override fun handleOnBackPressed() {
+                findNavController().navigate(R.id.action_quizStartFragment_to_homeFragment)
+            }
+        }
+        requireActivity().onBackPressedDispatcher.addCallback(this, callback)
     }
 }

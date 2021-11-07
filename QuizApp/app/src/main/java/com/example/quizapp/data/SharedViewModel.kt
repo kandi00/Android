@@ -89,4 +89,7 @@ class SharedViewModel(application : Application) : AndroidViewModel(application)
     fun setCurrentQuestionPosition(poz : Int){
         currentQuestion = poz
     }
+    fun deleteQuestion(poz : Int){
+        questions.removeAt(poz)
+    }
 }
