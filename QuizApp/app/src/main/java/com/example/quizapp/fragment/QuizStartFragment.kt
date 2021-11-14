@@ -26,11 +26,11 @@ class QuizStartFragment : Fragment() {
 
     private lateinit var binding : FragmentQuizStartBinding
     private lateinit var userName  : EditText
+    private lateinit var userEmail : EditText
     private lateinit var button : Button
     private lateinit var contactButton : Button
     private lateinit var imageButton : Button
     private lateinit var imageView : ImageView
-    private lateinit var email : EditText
     private lateinit var viewModel : SharedViewModel
 
     private val getContent = registerForActivityResult(
@@ -65,9 +65,10 @@ class QuizStartFragment : Fragment() {
         contactButton = binding.chooseContactButton
         imageButton = binding.chooseImageButton
         imageView = binding.quizTime
-        email = binding.editTextEmailAddress
+        userEmail = binding.editTextEmailAddress
         viewModel = ViewModelProvider(requireActivity()).get(SharedViewModel::class.java)
-        userName.setText(viewModel.getPlayerName().toString())
+        userName.setText(viewModel.getPlayerName())
+        userEmail.setText(viewModel.getPlayerEmail())
     }
 
     private fun setListeners(){
@@ -91,6 +92,7 @@ class QuizStartFragment : Fragment() {
                     .show()
                     if(flag) this.findNavController().navigate(R.id.action_quizStartFragment_to_questionFragment2)
                     viewModel.setPlayerName(userName.text.toString())
+                    viewModel.setPlayerEmail(userEmail.text.toString())
                 }
             }
         }
@@ -107,7 +109,7 @@ class QuizStartFragment : Fragment() {
     }
 
     private fun validateEmailAddress() : Boolean{
-        if(email.text.isNotEmpty() && Patterns.EMAIL_ADDRESS.matcher(email.text.toString()).matches()){
+        if(userEmail.text.isNotEmpty() && Patterns.EMAIL_ADDRESS.matcher(userEmail.text.toString()).matches()){
             Toast.makeText(context, "Email validated successfully!", Toast.LENGTH_SHORT).show()
             return true
         }

@@ -42,7 +42,6 @@ class MainActivity : AppCompatActivity() {
         appBarConfiguration = AppBarConfiguration(navController.graph, drawerLayout)
         setupActionBarWithNavController(navController, appBarConfiguration)
 
-
         //Retrofit, coroutines
         val repository = Repository()
         val viewModelFactory = MainViewModelFactory(repository)

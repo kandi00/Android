@@ -1,9 +1,11 @@
 package com.example.quizapp.fragment
 
+import android.app.AlertDialog
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
@@ -52,8 +54,16 @@ class QuestionListFragment : Fragment(), RecyclerViewAdapter.OnItemClickListener
     }
 
     override fun onDeleteButtonClick(position: Int) {
-        viewModel.deleteQuestion(position)
-        (recyclerView.adapter as RecyclerViewAdapter).notifyDataSetChanged()
+        AlertDialog.Builder(context)
+            .setTitle("Delete")
+            .setMessage("Are you sure you want to delete this question?")
+            .setPositiveButton("Yes") { _, _ -> viewModel.deleteQuestion(position)
+                            (recyclerView.adapter as RecyclerViewAdapter).notifyDataSetChanged()
+                            Toast.makeText(activity, "Question deleted!", Toast.LENGTH_SHORT).show()
+            }
+            .setNegativeButton("No"){ _, _ ->}
+            .create()
+            .show()
     }
 
 }

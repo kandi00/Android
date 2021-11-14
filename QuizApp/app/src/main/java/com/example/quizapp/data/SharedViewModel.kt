@@ -15,6 +15,7 @@ class SharedViewModel(application : Application) : AndroidViewModel(application)
     private var currentQuestion = 0
     private var correctAnswers = 0
     private var playerName : String = ""
+    private var playerEmail : String = ""
     private var highestScore : Int = 0
     @SuppressLint("StaticFieldLeak")
     private val context = application.applicationContext
@@ -42,6 +43,7 @@ class SharedViewModel(application : Application) : AndroidViewModel(application)
     }
 
     fun getNextQuestion(): Question {
+        if(currentQuestion == questions.size-1) currentQuestion = 0
         return questions[++currentQuestion]
     }
 
@@ -74,6 +76,14 @@ class SharedViewModel(application : Application) : AndroidViewModel(application)
 
     fun getPlayerName(): String? {
         return playerName
+    }
+
+    fun setPlayerEmail(playerEmail : String){
+        this.playerEmail = playerEmail
+    }
+
+    fun getPlayerEmail(): String? {
+        return playerEmail
     }
 
     fun setHighestScore(){
